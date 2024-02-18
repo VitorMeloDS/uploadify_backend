@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: .
+      target: dev
+    ports:
+      - '9001:3000'
+    env_file: .env
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+      - /app/node_modules
+  db:
+    image: postgres
+    container_name: uploadify_pg
+    restart: unless-stopped
+    hostname: uploadify_pg
+    networks:
+      - uploadify_network
+    ports:
+      - '5432:5432'
+    volumes:
+      - uploadify_pg_data:/var/opt/mssql
+    shm_size: 128mb
+    environment:
+      POSTGRES_PASSWORD: admin@123456
+
+volumes:
+  uploadify_pg_data:
+    external: true
+
+networks:
+  idigital_network:
+    driver: bridge
+    external: true
