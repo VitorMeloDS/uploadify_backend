@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "outDir": "./dist",
+    "module": "commonjs",
+    "target": "ES2020",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@database": ["src/database"],
+      "@config": ["./src/config"],
+      "@appTypes": ["./src/app/types"],
+      "@jobs": ["src/jobs"],
+      "@models": ["./src/database/models"],
+      "@controllers": ["./src/app/controllers"],
+      "@middlewares": ["src/app/middlewares"],
+      "@services": ["./src/app/services"],
+      "@providers": ["./src/providers"],
+      "@utils/*": ["./src/utils/*"],
+      "@helpers/*": ["src/helpers/*"],
+      "@routes/*": ["./src/app/routes/*"]
+    }
+  }
+}
