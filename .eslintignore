@@ -1,0 +1,12 @@
+# Logs
+logs
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+dist
+.temp
+.cache
+.vscode-test
+node_modules
