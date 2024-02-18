@@ -1,6 +1,7 @@
 import { routerControl } from './core/router/router';
 import express, { Express } from 'express';
 import { Config } from './common/config';
+import 'reflect-metadata';
 import cors from 'cors';
 
 export class AppListenner {
