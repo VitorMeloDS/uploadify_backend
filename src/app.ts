@@ -1,12 +1,13 @@
 import { routerControl } from './core/router/router';
 import express, { Express } from 'express';
-import { Config } from './common/config';
+import { Configuration } from '@config';
 import 'reflect-metadata';
 import cors from 'cors';
+import { Database } from './common/database/dbconnection';
 
 export class AppListenner {
   private static readonly app: Express = express();
-  private static readonly port: number = Config.env.api.port;
+  private static readonly port: number = Configuration.env.api.port;
 
   private static configResponse(): void {
     AppListenner.app.use(express.urlencoded({ extended: false }));
@@ -21,13 +22,18 @@ export class AppListenner {
     AppListenner.app.use('/api', routerControl);
   }
 
-  public static listen(): void {
-    AppListenner.configResponse();
-    AppListenner.configCors();
-    AppListenner.router();
+  public static async listen(): Promise<void> {
+    try {
+      AppListenner.configResponse();
+      AppListenner.configCors();
+      AppListenner.router();
+      await Database.createConnection();
 
-    AppListenner.app.listen(AppListenner.port, (): void => {
-      console.log(`Server starde in port ${AppListenner.port}`);
-    });
+      AppListenner.app.listen(AppListenner.port, (): void => {
+        console.log(`Server starde in port ${AppListenner.port}`);
+      });
+    } catch (error) {
+      throw new Error(AppListenner.name + ' ' + error);
+    }
   }
 }

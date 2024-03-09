@@ -1,8 +1,10 @@
-import { routerAuth } from './router.auth';
+import { routerAuth } from './auth.router';
+import { routerUser } from './user.router';
 import { Router } from 'express';
 
 const router: Router = Router();
 
-router.get('/auth', routerAuth);
+router.use('/auth', routerAuth);
+router.use('/user', routerUser);
 
 export const routerControl: Router = router;

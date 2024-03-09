@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "outDir": "./dist",
     "module": "commonjs",
     "target": "ES2020",
@@ -12,17 +12,9 @@
     "baseUrl": ".",
     "paths": {
       "@database": ["src/database"],
-      "@config": ["./src/config"],
-      "@appTypes": ["./src/app/types"],
-      "@jobs": ["src/jobs"],
-      "@models": ["./src/database/models"],
-      "@controllers": ["./src/app/controllers"],
-      "@middlewares": ["src/app/middlewares"],
-      "@services": ["./src/app/services"],
-      "@providers": ["./src/providers"],
-      "@utils/*": ["./src/utils/*"],
-      "@helpers/*": ["src/helpers/*"],
-      "@routes/*": ["./src/app/routes/*"]
+      "@config": ["./src/common/config"],
+      "@models": ["./src/common/database/models"],
+      "@modules": ["./src/core/modules"]
     }
   }
 }
