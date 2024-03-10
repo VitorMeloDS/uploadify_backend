@@ -1,5 +1,5 @@
-import { Environment } from '../../core/interfaces/environment';
 import { EnvironmentConfig } from './config';
+import { Environment } from '@interfaces';
 
 export class Configuration {
   private static readonly _env = new EnvironmentConfig().getEnvironmentVariables();

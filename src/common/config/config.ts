@@ -1,5 +1,5 @@
+import { Environment } from '@interfaces';
 import { env } from './env';
-import { Environment } from '../../core/interfaces/environment';
 
 export class EnvironmentConfig {
   private checkUndefined(key: string, object: any): void {
