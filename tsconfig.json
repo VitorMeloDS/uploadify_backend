@@ -11,10 +11,12 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@database": ["src/database"],
-      "@config": ["./src/common/config"],
       "@models": ["./src/common/database/models"],
-      "@modules": ["./src/core/modules"]
+      "@config": ["./src/common/config"],
+      "@modules": ["./src/core/modules"],
+      "@utils": ["./src/common/utils"],
+      "@helpers": ["./src/common/helpers"],
+      "@interfaces": ["src/core/interfaces"]
     }
   }
 }
