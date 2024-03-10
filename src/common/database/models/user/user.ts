@@ -1,11 +1,12 @@
 import { UserAttributes, UserCreationAttributes } from './user.interface';
-import { UserDefaultScope } from './user.scope';
+import { UserDefaultScope, UserScopes } from './user.scope';
 import {
   AllowNull,
   AutoIncrement,
   Column,
   DataType,
   DefaultScope,
+  Scopes,
   Model,
   PrimaryKey,
   Table,
@@ -13,6 +14,7 @@ import {
 } from 'sequelize-typescript';
 
 @DefaultScope(UserDefaultScope)
+@Scopes(UserScopes)
 @Table({ tableName: 'usuario', timestamps: true })
 export class User
   extends Model<UserAttributes, UserCreationAttributes>

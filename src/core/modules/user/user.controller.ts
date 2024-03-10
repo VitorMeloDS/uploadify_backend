@@ -10,21 +10,20 @@ export class UserController {
    * @param { NextFunction } _next - Função para passar para o próximo passo do Express;
    */
   public static async create(_req: Request, res: Response, _next: NextFunction) {
-    try {
-      const password = bcrypt.hashSync(
-        '12345678',
-        bcrypt.genSaltSync(Math.floor(Math.random() * 20))
-      );
-      const user = await User.create({
-        name: 'usuario.teste',
-        email: 'vmsvitor20@gmail.com',
-        password
-      });
-
-      return res.send(user).status(201);
-    } catch (error) {
-      console.log(error);
-      return res.send(error).status(500);
-    }
+    // try {
+    //   const password = bcrypt.hashSync(
+    //     '12345678',
+    //     bcrypt.genSaltSync(Math.floor(Math.random() * 20))
+    //   );
+    //   const user = await User.create({
+    //     name: 'usuario.teste',
+    //     email: 'vmsvitor20@gmail.com',
+    //     password
+    //   });
+    //   return res.send(user).status(201);
+    // } catch (error) {
+    //   console.log(error);
+    //   return res.send(error).status(500);
+    // }
   }
 }

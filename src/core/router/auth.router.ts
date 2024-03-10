@@ -1,9 +1,8 @@
-import { Request, Response, Router } from 'express';
+import { Router } from 'express';
+import { AuthController } from '../modules/auth/auth.controller';
 
 const router: Router = Router();
 
-router.post('/login', async (_req: Request, res: Response) => {
-  return res.send({ message: 'rota em construção!' });
-});
+router.post('/login', AuthController.auth);
 
 export const routerAuth: Router = router;
